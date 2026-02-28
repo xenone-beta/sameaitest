@@ -33,6 +33,8 @@ OPENAI_MODEL=gpt-4o-mini
 NEXT_PUBLIC_SITE_URL=https://sameaitest.vercel.app
 ```
 
+`NEXT_PUBLIC_SITE_URL` можно указывать как с протоколом (`https://...`), так и просто доменом (`sameaitest.vercel.app`) — приложение нормализует значение автоматически.
+
 Если `OPENAI_API_KEY` не задан, режим описательного поиска деградирует к прямому поиску в Steam.
 
 ## Запуск

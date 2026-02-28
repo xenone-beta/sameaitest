@@ -1,7 +1,22 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sameaitest.vercel.app';
+const defaultSiteUrl = 'https://sameaitest.vercel.app';
+
+function resolveSiteUrl(rawUrl: string | undefined): string {
+  if (!rawUrl) {
+    return defaultSiteUrl;
+  }
+
+  try {
+    const normalized = rawUrl.startsWith('http') ? rawUrl : `https://${rawUrl}`;
+    return new URL(normalized).toString();
+  } catch {
+    return defaultSiteUrl;
+  }
+}
+
+const siteUrl = resolveSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
