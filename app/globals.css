@@ -1,0 +1,151 @@
+:root {
+  color-scheme: dark;
+  --bg: #101822;
+  --bg-elevated: #172030;
+  --panel: #1d2737;
+  --text: #e7eef9;
+  --muted: #9fb3ce;
+  --accent: #66c0f4;
+  --accent-strong: #1a9fff;
+  --ok: #6fdd6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at 20% 0%, #20324b, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 1.8rem;
+}
+
+.search-panel {
+  background: linear-gradient(170deg, #17253a 0%, #122033 100%);
+  border: 1px solid #2e3d56;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #324767;
+  background: #0f1a2a;
+  color: var(--text);
+  padding: 1rem;
+  resize: vertical;
+  min-height: 108px;
+  font-size: 1rem;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 0.85rem 1.2rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.primary {
+  margin-top: 0.9rem;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: #021424;
+}
+
+.secondary {
+  background: #2a3b56;
+  color: var(--text);
+}
+
+.hints {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.result,
+.card-list,
+.history,
+.popular {
+  margin-top: 1.2rem;
+  background: var(--bg-elevated);
+  border: 1px solid #2b3a52;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #354764;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-body {
+  padding: 0.7rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.footer-note {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 4px solid #35506f;
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+  margin: 0.8rem auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
